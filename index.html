@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KReed Nursing Solutions LLC | @kimsnursinggems</title>
+    <title>KReed Nursing Solutions LLC | Nursing Education & Consulting</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,52 +11,37 @@
             theme: {
                 extend: {
                     colors: {
-                        clinicalNavy: '#0B192C',
-                        clinicalDeep: '#07111F',
-                        electricTeal: '#00B4D8',
-                        tealDark: '#0096C7',
+                        clinicalNavy: '#0A192F',
+                        clinicalDeep: '#061020',
+                        electricTeal: '#00F2FE',
+                        tealAccent: '#0EA5E9',
+                        tealDark: '#0284C7',
                         warmCoral: '#FF6B6B',
                         coralDark: '#EE5253',
                         softMint: '#E0F7FA',
                         surfaceCream: '#F8FAFC',
                     },
                     fontFamily: {
-                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
                         sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F8FAFC;
-            color: #0B192C;
+            color: #0A192F;
             overflow-x: hidden;
         }
         h1, h2, h3, h4, .font-display {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        /* 3D Flashcard Flip Animation */
-        .perspective-1000 {
-            perspective: 1000px;
-        }
-        .transform-style-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .backface-hidden {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-            transform: rotateY(180deg);
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Floating Animations */
@@ -88,7 +73,7 @@
 
         /* Custom subtle grid pattern */
         .bg-grid-pattern {
-            background-image: radial-gradient(rgba(0, 180, 216, 0.16) 1.2px, transparent 1.2px);
+            background-image: radial-gradient(rgba(0, 242, 254, 0.16) 1.2px, transparent 1.2px);
             background-size: 24px 24px;
         }
     </style>
@@ -96,9 +81,9 @@
 <body class="antialiased selection:bg-electricTeal selection:text-clinicalNavy">
 
     <!-- Service Details Modal Drawer -->
-    <div id="service-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-clinicalNavy/70 backdrop-blur-sm p-4">
+    <div id="service-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-clinicalNavy/75 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modal-service-title">
         <div id="service-modal-card" class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 transform scale-95 opacity-0 transition-all duration-300 relative">
-            <button onclick="closeServiceModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-clinicalNavy flex items-center justify-center transition" aria-label="Close modal">
+            <button onclick="closeServiceModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-clinicalNavy flex items-center justify-center transition" aria-label="Close service details">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             <div id="modal-badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"></div>
@@ -106,13 +91,13 @@
             <p id="modal-service-desc" class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"></p>
             
             <div class="bg-surfaceCream rounded-2xl p-5 border border-slate-200/80 mb-6">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">What's Included</h4>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Key Deliverables &amp; Focus Areas</h4>
                 <ul id="modal-service-bullets" class="space-y-2.5 text-sm text-clinicalNavy font-medium"></ul>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-3">
-                <button id="modal-book-btn" class="flex-1 py-3.5 px-6 rounded-xl bg-electricTeal hover:bg-tealDark text-clinicalNavy font-bold shadow-lg shadow-electricTeal/25 transition flex items-center justify-center gap-2">
-                    <span>Book This Service</span>
+                <button id="modal-book-btn" class="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-electricTeal to-tealAccent hover:opacity-95 text-clinicalNavy font-extrabold shadow-lg shadow-tealAccent/25 transition flex items-center justify-center gap-2">
+                    <span>Inquire About This Service</span>
                     <i class="fa-solid fa-arrow-right text-sm"></i>
                 </button>
                 <button onclick="closeServiceModal()" class="py-3.5 px-6 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition">
@@ -122,36 +107,131 @@
         </div>
     </div>
 
+    <!-- DIRECT INQUIRIES EMAIL POPUP MODAL -->
+    <div id="inquiry-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-clinicalNavy/80 backdrop-blur-md p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="inquiry-modal-heading">
+        <div id="inquiry-modal-card" class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-9 shadow-2xl border border-slate-100 transform scale-95 opacity-0 transition-all duration-300 relative my-auto">
+            <button onclick="closeInquiryModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-clinicalNavy flex items-center justify-center transition" aria-label="Close Direct Inquiry popup">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div id="inquiry-form-wrapper">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-softMint text-tealDark text-xs font-extrabold uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-envelope-open-text"></i> Direct Inquiry
+                </div>
+                <h3 id="inquiry-modal-heading" class="text-2xl sm:text-3xl font-extrabold text-clinicalNavy tracking-tight mb-2">
+                    Send a Direct Message
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    Have a question about nursing education consulting, curriculum advising, tutoring, or guest lecturing? Complete the form below and your message will be delivered directly to our team.
+                </p>
+
+                <form id="direct-inquiry-form" onsubmit="handleDirectInquirySubmit(event)" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="inq-name" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">Full Name <span class="text-warmCoral">*</span></label>
+                            <input type="text" id="inq-name" name="name" required placeholder="e.g., Dr. Jordan Taylor, MSN, RN" class="w-full px-4 py-3 rounded-xl bg-surfaceCream border border-slate-200 focus:border-tealAccent focus:ring-2 focus:ring-tealAccent/20 outline-none text-sm font-medium transition">
+                        </div>
+                        <div>
+                            <label for="inq-email" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">Your Email Address <span class="text-warmCoral">*</span></label>
+                            <input type="email" id="inq-email" name="email" required placeholder="you@institution.edu" class="w-full px-4 py-3 rounded-xl bg-surfaceCream border border-slate-200 focus:border-tealAccent focus:ring-2 focus:ring-tealAccent/20 outline-none text-sm font-medium transition">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="inq-role" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">Role / Organization <span class="text-warmCoral">*</span></label>
+                            <select id="inq-role" name="role" required class="w-full px-4 py-3 rounded-xl bg-surfaceCream border border-slate-200 focus:border-tealAccent focus:ring-2 focus:ring-tealAccent/20 outline-none text-sm font-medium transition">
+                                <option value="Academic Program / Institution">Academic Program / Institution</option>
+                                <option value="Faculty / Nurse Educator">Faculty / Nurse Educator</option>
+                                <option value="Nursing Student">Nursing Student (LPN / ADN / BSN / MSN)</option>
+                                <option value="Healthcare Organization / Clinical Educator">Healthcare Organization / Clinical Educator</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="inq-service" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">Service of Interest <span class="text-warmCoral">*</span></label>
+                            <select id="inq-service" name="service" required class="w-full px-4 py-3 rounded-xl bg-surfaceCream border border-slate-200 focus:border-tealAccent focus:ring-2 focus:ring-tealAccent/20 outline-none text-sm font-medium transition">
+                                <option value="Nurse Consulting">Nurse Consulting</option>
+                                <option value="Curriculum Advising">Curriculum Advising</option>
+                                <option value="Nursing Tutoring">Nursing Tutoring</option>
+                                <option value="Guest Lecturing">Guest Lecturing</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="inq-subject" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">Subject <span class="text-warmCoral">*</span></label>
+                        <input type="text" id="inq-subject" name="subject" required placeholder="e.g., BSN Curriculum Review or Fundamentals Tutoring Inquiry" class="w-full px-4 py-3 rounded-xl bg-surfaceCream border border-slate-200 focus:border-tealAccent focus:ring-2 focus:ring-tealAccent/20 outline-none text-sm font-medium transition">
+                    </div>
+
+                    <div>
+                        <label for="inq-message" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">Message <span class="text-warmCoral">*</span></label>
+                        <textarea id="inq-message" name="message" rows="4" required placeholder="Share details about your program goals, course needs, lecture dates, or academic support objectives..." class="w-full px-4 py-3 rounded-xl bg-surfaceCream border border-slate-200 focus:border-tealAccent focus:ring-2 focus:ring-tealAccent/20 outline-none text-sm font-medium transition resize-none"></textarea>
+                    </div>
+
+                    <div id="inq-error-banner" class="hidden rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-xs font-semibold"></div>
+
+                    <div class="pt-1 flex flex-col sm:flex-row gap-3">
+                        <button type="submit" id="inq-submit-btn" class="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-electricTeal to-tealAccent hover:opacity-95 text-clinicalNavy font-extrabold text-sm sm:text-base shadow-xl shadow-tealAccent/25 transition flex items-center justify-center gap-2">
+                            <span id="inq-submit-text">Send Direct Inquiry</span>
+                            <i id="inq-submit-icon" class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <button type="button" onclick="closeInquiryModal()" class="py-4 px-6 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success State inside Direct Inquiry Popup -->
+            <div id="inquiry-success-state" class="hidden text-center py-8 space-y-5">
+                <div class="w-16 h-16 rounded-2xl bg-softMint text-tealDark flex items-center justify-center text-3xl mx-auto shadow-md">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="space-y-2">
+                    <span id="inq-sent-badge" class="inline-block px-3.5 py-1 rounded-full bg-warmCoral/15 text-warmCoral text-xs font-extrabold uppercase tracking-wider"></span>
+                    <h3 class="text-2xl font-extrabold text-clinicalNavy">Your Message Has Been Sent!</h3>
+                    <p id="inq-sent-copy" class="text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed"></p>
+                </div>
+                <div class="pt-2 flex flex-wrap justify-center gap-3">
+                    <button type="button" onclick="resetInquiryModal()" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-sm transition">
+                        Send Another Inquiry
+                    </button>
+                    <button type="button" onclick="closeInquiryModal()" class="px-6 py-3 rounded-xl bg-clinicalNavy hover:bg-clinicalDeep text-white font-bold text-sm transition">
+                        Return to Page
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <header class="sticky top-0 z-40 bg-clinicalNavy/95 backdrop-blur-md border-b border-white/10 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3.5 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-electricTeal to-tealDark flex items-center justify-center text-clinicalNavy shadow-lg shadow-electricTeal/25 group-hover:scale-105 transition">
-                    <i class="fa-solid fa-gem text-xl"></i>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-electricTeal to-tealAccent flex items-center justify-center text-clinicalNavy shadow-lg shadow-tealAccent/25 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
                 </div>
                 <div>
                     <span class="font-display text-lg sm:text-xl font-extrabold tracking-tight block leading-none">KReed Nursing Solutions</span>
-                    <span class="text-[11px] font-semibold text-electricTeal tracking-wider uppercase mt-1 block">LLC &bull; @kimsnursinggems</span>
+                    <span class="text-[11px] font-semibold text-electricTeal tracking-wider uppercase mt-1 block">LLC &bull; Nursing Education &amp; Consulting</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition">About</a>
                 <a href="#services" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition">Services</a>
-                <a href="#nursing-gems" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-warmCoral animate-ping"></span>
-                    @kimsnursinggems
-                </a>
-                <a href="#about" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition">Mission</a>
-                <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition">Contact</a>
+                <a href="#approach" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition">Approach</a>
+                <button type="button" onclick="openInquiryModal()" class="text-sm font-medium text-slate-300 hover:text-electricTeal transition">Direct Inquiry</button>
             </nav>
 
             <!-- CTA Button -->
             <div class="hidden md:flex items-center gap-3">
-                <a href="#contact" onclick="selectBookingTab('Tutoring')" class="px-5 py-2.5 rounded-xl bg-warmCoral hover:bg-coralDark text-white text-sm font-bold shadow-lg shadow-warmCoral/25 hover:shadow-xl transition transform hover:-translate-y-0.5">
-                    Book a Session
-                </a>
+                <button type="button" onclick="openInquiryModal()" class="px-5 py-2.5 rounded-xl bg-warmCoral hover:bg-coralDark text-white text-sm font-bold shadow-lg shadow-warmCoral/25 hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Direct Inquiry</span>
+                </button>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -162,14 +242,14 @@
 
         <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-clinicalDeep border-b border-white/10 px-6 py-5 space-y-4">
+            <a href="#about" onclick="closeMobileMenu()" class="block text-base font-semibold text-slate-200 hover:text-electricTeal">About</a>
             <a href="#services" onclick="closeMobileMenu()" class="block text-base font-semibold text-slate-200 hover:text-electricTeal">Services</a>
-            <a href="#nursing-gems" onclick="closeMobileMenu()" class="block text-base font-semibold text-warmCoral">@kimsnursinggems Student Hub</a>
-            <a href="#about" onclick="closeMobileMenu()" class="block text-base font-semibold text-slate-200 hover:text-electricTeal">About & Mission</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="block text-base font-semibold text-slate-200 hover:text-electricTeal">Book Consultation</a>
+            <a href="#approach" onclick="closeMobileMenu()" class="block text-base font-semibold text-slate-200 hover:text-electricTeal">Educational Approach</a>
             <div class="pt-2">
-                <a href="#contact" onclick="closeMobileMenu(); selectBookingTab('Nurse Consulting')" class="block w-full py-3.5 rounded-xl bg-electricTeal text-clinicalNavy font-extrabold text-center shadow-lg">
-                    Get Started Today
-                </a>
+                <button type="button" onclick="closeMobileMenu(); openInquiryModal();" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-electricTeal to-tealAccent text-clinicalNavy font-extrabold text-center shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Send Direct Inquiry</span>
+                </button>
             </div>
         </div>
     </header>
@@ -187,43 +267,46 @@
                 <!-- Left Copy Column -->
                 <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs sm:text-sm font-semibold text-softMint">
-                        <span class="px-2 py-0.5 rounded-full bg-warmCoral text-white text-[11px] font-bold uppercase tracking-wide">New</span>
-                        <span>Clinical Strategy &bull; Academic Excellence &bull; Student Mentorship</span>
+                        <span>Academic Strategy &bull; Curriculum Design &bull; Student Mastery</span>
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
-                        Mastering <span class="text-transparent bg-clip-text bg-gradient-to-r from-electricTeal via-softMint to-electricTeal">Nursing Fundamentals</span> &amp; Elevating Healthcare Education
+                        Advancing <span class="text-transparent bg-clip-text bg-gradient-to-r from-electricTeal via-softMint to-tealAccent">Nursing Education</span> &amp; Clinical Judgment
                     </h1>
 
                     <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        <strong class="text-white">KReed Nursing Solutions LLC</strong> empowers healthcare organizations, nursing faculty, and future nurses through expert nurse consulting, curriculum advising, and personalized tutoring—powered by the thriving student community at <a href="#nursing-gems" class="text-warmCoral font-bold hover:underline">@kimsnursinggems</a>.
+                        <strong class="text-white">KReed Nursing Solutions LLC</strong> partners with academic nursing programs, educators, healthcare institutions, and nursing students through specialized <strong class="text-electricTeal">Nurse Consulting</strong>, <strong class="text-electricTeal">Curriculum Advising</strong>, <strong class="text-electricTeal">Nursing Tutoring</strong>, and <strong class="text-electricTeal">Guest Lecturing</strong>.
                     </p>
 
                     <!-- Dual Interactive CTAs -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#contact" onclick="selectBookingTab('Nurse Consulting')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-electricTeal hover:bg-tealDark text-clinicalNavy font-extrabold text-base shadow-xl shadow-electricTeal/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
-                            <span>Book a Consultation</span>
-                            <i class="fa-solid fa-calendar-check"></i>
-                        </a>
-                        <a href="#nursing-gems" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-base backdrop-blur-md transition flex items-center justify-center gap-2.5">
-                            <i class="fa-solid fa-gem text-warmCoral"></i>
-                            <span>Explore @kimsnursinggems</span>
+                        <button type="button" onclick="openInquiryModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-electricTeal to-tealAccent hover:opacity-95 text-clinicalNavy font-extrabold text-base shadow-xl shadow-tealAccent/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
+                            <span>Send Direct Inquiry</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-base backdrop-blur-md transition flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-layer-group text-warmCoral"></i>
+                            <span>Explore Education Services</span>
                         </a>
                     </div>
 
                     <!-- Highlight Pillars -->
-                    <div class="pt-6 grid grid-cols-3 gap-4 sm:gap-6 max-w-xl mx-auto lg:mx-0 border-t border-white/10">
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto lg:mx-0 border-t border-white/10">
                         <div>
-                            <div class="text-electricTeal font-display font-extrabold text-xl sm:text-2xl">Consulting</div>
-                            <div class="text-xs text-slate-400 mt-0.5">Clinical &amp; Strategic Insights</div>
+                            <div class="text-electricTeal font-display font-extrabold text-base sm:text-lg">Consulting</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Program &amp; Faculty Strategy</div>
                         </div>
                         <div>
-                            <div class="text-warmCoral font-display font-extrabold text-xl sm:text-2xl">Curriculum</div>
-                            <div class="text-xs text-slate-400 mt-0.5">Academic Program Design</div>
+                            <div class="text-warmCoral font-display font-extrabold text-base sm:text-lg">Curriculum</div>
+                            <div class="text-xs text-slate-400 mt-0.5">AACN &amp; NGN Alignment</div>
                         </div>
                         <div>
-                            <div class="text-softMint font-display font-extrabold text-xl sm:text-2xl">Tutoring</div>
-                            <div class="text-xs text-slate-400 mt-0.5">1-on-1 &amp; Group Mastery</div>
+                            <div class="text-softMint font-display font-extrabold text-base sm:text-lg">Tutoring</div>
+                            <div class="text-xs text-slate-400 mt-0.5">1-on-1 &amp; Group Coaching</div>
+                        </div>
+                        <div>
+                            <div class="text-electricTeal font-display font-extrabold text-base sm:text-lg">Lecturing</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Seminars &amp; Workshops</div>
                         </div>
                     </div>
                 </div>
@@ -234,69 +317,80 @@
                         <!-- Floating Top Badge -->
                         <div class="hidden sm:flex items-center gap-3 bg-white text-clinicalNavy px-4 py-3 rounded-2xl shadow-2xl border border-slate-100 absolute -top-6 -left-6 z-20 animate-float-slow">
                             <div class="w-10 h-10 rounded-xl bg-warmCoral/15 text-warmCoral flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-heart-pulse"></i>
+                                <i class="fa-solid fa-chalkboard-user"></i>
                             </div>
                             <div>
-                                <p class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Student Hub</p>
-                                <p class="text-sm font-extrabold text-clinicalNavy">@kimsnursinggems</p>
+                                <p class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Academic Excellence</p>
+                                <p class="text-sm font-extrabold text-clinicalNavy">Programs &bull; Faculty &bull; Students</p>
                             </div>
                         </div>
 
                         <!-- Main Hero Showcase Card -->
                         <div class="bg-gradient-to-b from-white/15 to-white/5 p-1.5 rounded-3xl backdrop-blur-xl border border-white/20 shadow-2xl">
-                            <div class="bg-clinicalDeep rounded-[22px] p-6 sm:p-8 space-y-6">
+                            <div class="bg-clinicalDeep rounded-[22px] p-6 sm:p-7 space-y-5">
                                 <div class="flex items-center justify-between border-b border-white/10 pb-4">
                                     <div class="flex items-center gap-3">
                                         <div class="w-11 h-11 rounded-xl bg-electricTeal/20 text-electricTeal flex items-center justify-center text-xl">
                                             <i class="fa-solid fa-stethoscope"></i>
                                         </div>
                                         <div>
-                                            <h3 class="font-bold text-white text-base">Pathways to Excellence</h3>
-                                            <p class="text-xs text-slate-400">Tailored Support for Every Stage</p>
+                                            <h3 class="font-bold text-white text-base">Nursing Education Solutions</h3>
+                                            <p class="text-xs text-slate-400">Select a service to preview deliverables</p>
                                         </div>
                                     </div>
-                                    <span class="px-2.5 py-1 rounded-lg bg-electricTeal/20 text-electricTeal text-xs font-bold">KReed LLC</span>
+                                    <span class="px-2.5 py-1 rounded-lg bg-electricTeal/20 text-electricTeal text-xs font-bold">4 Pillars</span>
                                 </div>
 
-                                <div class="space-y-3.5">
-                                    <button onclick="openServiceModal('consulting')" class="w-full text-left p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
+                                <div class="space-y-3">
+                                    <button onclick="openServiceModal('consulting')" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
                                         <div class="flex items-center gap-3.5">
                                             <span class="w-9 h-9 rounded-xl bg-electricTeal text-clinicalNavy flex items-center justify-center font-bold text-sm">01</span>
                                             <div>
                                                 <p class="font-bold text-white text-sm group-hover:text-electricTeal transition">Nurse Consulting</p>
-                                                <p class="text-xs text-slate-400">Clinical strategy &amp; healthcare guidance</p>
+                                                <p class="text-xs text-slate-400">Accreditation readiness &amp; academic strategy</p>
                                             </div>
                                         </div>
                                         <i class="fa-solid fa-chevron-right text-slate-500 group-hover:text-electricTeal group-hover:translate-x-1 transition"></i>
                                     </button>
 
-                                    <button onclick="openServiceModal('curriculum')" class="w-full text-left p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
+                                    <button onclick="openServiceModal('curriculum')" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
                                         <div class="flex items-center gap-3.5">
                                             <span class="w-9 h-9 rounded-xl bg-warmCoral text-white flex items-center justify-center font-bold text-sm">02</span>
                                             <div>
                                                 <p class="font-bold text-white text-sm group-hover:text-warmCoral transition">Curriculum Advising</p>
-                                                <p class="text-xs text-slate-400">Nursing program &amp; educational design</p>
+                                                <p class="text-xs text-slate-400">Syllabus audits &amp; competency-based design</p>
                                             </div>
                                         </div>
                                         <i class="fa-solid fa-chevron-right text-slate-500 group-hover:text-warmCoral group-hover:translate-x-1 transition"></i>
                                     </button>
 
-                                    <button onclick="openServiceModal('tutoring')" class="w-full text-left p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
+                                    <button onclick="openServiceModal('tutoring')" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
                                         <div class="flex items-center gap-3.5">
                                             <span class="w-9 h-9 rounded-xl bg-softMint text-clinicalNavy flex items-center justify-center font-bold text-sm">03</span>
                                             <div>
                                                 <p class="font-bold text-white text-sm group-hover:text-softMint transition">Nursing Tutoring</p>
-                                                <p class="text-xs text-slate-400">1-on-1 &amp; group fundamentals mastery</p>
+                                                <p class="text-xs text-slate-400">Fundamentals, pharm, patho &amp; NCLEX prep</p>
                                             </div>
                                         </div>
                                         <i class="fa-solid fa-chevron-right text-slate-500 group-hover:text-softMint group-hover:translate-x-1 transition"></i>
                                     </button>
+
+                                    <button onclick="openServiceModal('lecturing')" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center justify-between group">
+                                        <div class="flex items-center gap-3.5">
+                                            <span class="w-9 h-9 rounded-xl bg-tealAccent text-clinicalNavy flex items-center justify-center font-bold text-sm">04</span>
+                                            <div>
+                                                <p class="font-bold text-white text-sm group-hover:text-electricTeal transition">Guest Lecturing</p>
+                                                <p class="text-xs text-slate-400">Clinical seminars &amp; faculty workshops</p>
+                                            </div>
+                                        </div>
+                                        <i class="fa-solid fa-chevron-right text-slate-500 group-hover:text-electricTeal group-hover:translate-x-1 transition"></i>
+                                    </button>
                                 </div>
 
                                 <div class="pt-1">
-                                    <a href="#contact" class="block w-full py-3.5 rounded-xl bg-gradient-to-r from-warmCoral to-coralDark hover:opacity-95 text-white font-bold text-sm text-center shadow-lg transition">
-                                        Schedule Your Discovery Call &rarr;
-                                    </a>
+                                    <button type="button" onclick="openInquiryModal()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-warmCoral to-coralDark hover:opacity-95 text-white font-bold text-sm text-center shadow-lg transition">
+                                        Request a Consultation or Lecture &rarr;
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -304,11 +398,11 @@
                         <!-- Floating Bottom Pill -->
                         <div class="hidden sm:flex items-center gap-3 bg-softMint text-clinicalNavy px-4 py-3 rounded-2xl shadow-xl border border-electricTeal/30 absolute -bottom-6 -right-4 z-20 animate-float-delayed">
                             <div class="w-9 h-9 rounded-full bg-clinicalNavy text-electricTeal flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-graduation-cap"></i>
+                                <i class="fa-solid fa-award"></i>
                             </div>
                             <div>
-                                <p class="text-xs font-extrabold">NCLEX &amp; Fundamentals</p>
-                                <p class="text-[11px] font-medium text-slate-600">Simplified for Clinical Confidence</p>
+                                <p class="text-xs font-extrabold">Evidence-Based Pedagogy</p>
+                                <p class="text-[11px] font-medium text-slate-600">NGN Clinical Judgment &amp; Retention</p>
                             </div>
                         </div>
                     </div>
@@ -318,145 +412,186 @@
         </div>
     </section>
 
-    <!-- CORE SERVICES SECTION -->
+    <!-- CORE SERVICES SECTION (4-CARD INTERACTIVE GRID) -->
     <section id="services" class="py-24 bg-surfaceCream relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-softMint text-tealDark text-xs font-extrabold uppercase tracking-wider mb-4">
-                    <i class="fa-solid fa-layer-group"></i> Specialized Expertise
+                    <i class="fa-solid fa-layer-group"></i> Specialized Nursing Education Services
                 </span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-clinicalNavy tracking-tight mb-4">
-                    Three Pillars of Nursing &amp; Academic Impact
+                    Four Pillars of Nursing &amp; Academic Impact
                 </h2>
                 <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
-                    Whether you are a healthcare organization refining clinical strategy, an academic program strengthening outcomes, or a nursing student mastering fundamentals, we deliver tailored guidance.
+                    Comprehensive educational support tailored to academic nursing programs, faculty teams, clinical educators, and nursing students at every stage of progression.
                 </p>
             </div>
 
-            <!-- 3 Interactive Service Cards -->
-            <div class="grid md:grid-cols-3 gap-8">
+            <!-- 4 Interactive Service Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
                 
                 <!-- Card 1: Nurse Consulting -->
-                <div class="reveal bg-white rounded-3xl p-8 shadow-lg shadow-slate-200/60 border border-slate-100 hover:border-electricTeal hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                <div class="reveal bg-white rounded-3xl p-7 shadow-lg shadow-slate-200/60 border border-slate-100 hover:border-tealAccent hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-softMint text-tealDark group-hover:bg-electricTeal group-hover:text-clinicalNavy flex items-center justify-center text-2xl transition-colors">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-13 h-13 w-12 h-12 rounded-2xl bg-softMint text-tealDark group-hover:bg-electricTeal group-hover:text-clinicalNavy flex items-center justify-center text-xl transition-colors">
                                 <i class="fa-solid fa-briefcase-medical"></i>
                             </div>
-                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-600">Organizations &amp; Pros</span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">Programs &amp; Faculty</span>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-clinicalNavy mb-3 group-hover:text-tealDark transition">Nurse Consulting</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Strategic clinical guidance, healthcare workflow optimization, and evidence-based insights for healthcare organizations, clinics, and nurse leaders.
+                        <h3 class="text-xl font-extrabold text-clinicalNavy mb-3 group-hover:text-tealDark transition">Nurse Consulting</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Education-focused clinical strategy, program evaluation, faculty support, and accreditation or regulatory readiness for nursing institutions.
                         </p>
-                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-electricTeal mt-1"></i>
-                                <span>Clinical Strategy &amp; Quality Improvement</span>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-7">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-tealAccent mt-1"></i>
+                                <span>Accreditation &amp; Board Readiness</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-electricTeal mt-1"></i>
-                                <span>Healthcare Operations &amp; Workflow Insights</span>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-tealAccent mt-1"></i>
+                                <span>Program Evaluation &amp; Outcomes</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-circle-check text-electricTeal mt-1"></i>
-                                <span>Professional Mentorship &amp; Practice Readiness</span>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-tealAccent mt-1"></i>
+                                <span>Faculty Mentorship &amp; Simulation</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="space-y-2.5 pt-4 border-t border-slate-100">
-                        <button onclick="openServiceModal('consulting')" class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-sm transition flex items-center justify-center gap-2">
+                    <div class="space-y-2 pt-4 border-t border-slate-100">
+                        <button onclick="openServiceModal('consulting')" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-circle-info text-tealDark"></i>
-                            <span>View Scope &amp; Details</span>
+                            <span>View Deliverables</span>
                         </button>
-                        <a href="#contact" onclick="selectBookingTab('Nurse Consulting')" class="w-full py-3.5 px-4 rounded-xl bg-clinicalNavy hover:bg-electricTeal text-white hover:text-clinicalNavy font-extrabold text-sm transition flex items-center justify-center gap-2 shadow-md">
-                            <span>Book Consulting</span>
+                        <button type="button" onclick="openInquiryModal('Nurse Consulting')" class="w-full py-3 px-4 rounded-xl bg-clinicalNavy hover:bg-electricTeal text-white hover:text-clinicalNavy font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-md">
+                            <span>Inquire Now</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 2: Curriculum Advising -->
-                <div class="reveal bg-clinicalNavy text-white rounded-3xl p-8 shadow-2xl shadow-clinicalNavy/20 border-2 border-electricTeal/40 hover:border-electricTeal hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-electricTeal/10 rounded-bl-full pointer-events-none"></div>
+                <div class="reveal bg-clinicalNavy text-white rounded-3xl p-7 shadow-2xl shadow-clinicalNavy/20 border-2 border-electricTeal/40 hover:border-electricTeal hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-28 h-28 bg-electricTeal/10 rounded-bl-full pointer-events-none"></div>
                     <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-electricTeal text-clinicalNavy flex items-center justify-center text-2xl shadow-lg shadow-electricTeal/20">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-electricTeal text-clinicalNavy flex items-center justify-center text-xl shadow-lg shadow-electricTeal/20">
                                 <i class="fa-solid fa-book-open-reader"></i>
                             </div>
-                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-electricTeal/20 text-electricTeal">Academic Institutions</span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-electricTeal/20 text-electricTeal">Academic Design</span>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-white mb-3">Curriculum Advising</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Comprehensive academic program optimization, nursing school support, and modern educational design to elevate student retention and pass rates.
+                        <h3 class="text-xl font-extrabold text-white mb-3">Curriculum Advising</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-5">
+                            Syllabus auditing, concept- and competency-based curriculum design, AACN Essentials alignment, and NGN clinical judgment integration.
                         </p>
-                        <ul class="space-y-3 text-sm text-slate-200 mb-8">
-                            <li class="flex items-start gap-2.5">
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 mb-7">
+                            <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-circle-check text-electricTeal mt-1"></i>
-                                <span>Nursing Course &amp; Syllabus Alignment</span>
+                                <span>Syllabus &amp; Curriculum Mapping</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
+                            <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-circle-check text-electricTeal mt-1"></i>
-                                <span>Active Learning &amp; Clinical Simulation Design</span>
+                                <span>AACN Essentials Alignment</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
+                            <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-circle-check text-electricTeal mt-1"></i>
-                                <span>Student Remediation &amp; Success Frameworks</span>
+                                <span>NGN Clinical Judgment Integration</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="space-y-2.5 pt-4 border-t border-white/10">
-                        <button onclick="openServiceModal('curriculum')" class="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm transition flex items-center justify-center gap-2">
+                    <div class="space-y-2 pt-4 border-t border-white/10">
+                        <button onclick="openServiceModal('curriculum')" class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-circle-info text-electricTeal"></i>
-                            <span>View Scope &amp; Details</span>
+                            <span>View Deliverables</span>
                         </button>
-                        <a href="#contact" onclick="selectBookingTab('Curriculum Advising')" class="w-full py-3.5 px-4 rounded-xl bg-electricTeal hover:bg-tealDark text-clinicalNavy font-extrabold text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-electricTeal/25">
+                        <button type="button" onclick="openInquiryModal('Curriculum Advising')" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-electricTeal to-tealAccent hover:opacity-95 text-clinicalNavy font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-tealAccent/25">
                             <span>Request Advising</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Card 3: Tutoring -->
-                <div class="reveal bg-white rounded-3xl p-8 shadow-lg shadow-slate-200/60 border border-slate-100 hover:border-warmCoral hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                <!-- Card 3: Nursing Tutoring -->
+                <div class="reveal bg-white rounded-3xl p-7 shadow-lg shadow-slate-200/60 border border-slate-100 hover:border-warmCoral hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-warmCoral/15 text-warmCoral group-hover:bg-warmCoral group-hover:text-white flex items-center justify-center text-2xl transition-colors">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-warmCoral/15 text-warmCoral group-hover:bg-warmCoral group-hover:text-white flex items-center justify-center text-xl transition-colors">
                                 <i class="fa-solid fa-user-graduate"></i>
                             </div>
-                            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-warmCoral/10 text-warmCoral">Nursing Students</span>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-warmCoral/10 text-warmCoral">Student Coaching</span>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-clinicalNavy mb-3 group-hover:text-warmCoral transition">Nursing Tutoring</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Personalized 1-on-1 and small-group academic coaching designed to break down complex nursing fundamentals, boost test-taking confidence, and conquer exams.
+                        <h3 class="text-xl font-extrabold text-clinicalNavy mb-3 group-hover:text-warmCoral transition">Nursing Tutoring</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Personalized 1-on-1 and small-group academic coaching in fundamentals, pathophysiology, pharmacology, dosage calc, and NCLEX/ATI/HESI prep.
                         </p>
-                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
-                            <li class="flex items-start gap-2.5">
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-7">
+                            <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-circle-check text-warmCoral mt-1"></i>
-                                <span>1-on-1 Personalized Study Roadmaps</span>
+                                <span>Fundamentals, Patho &amp; Pharm</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
+                            <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-circle-check text-warmCoral mt-1"></i>
-                                <span>Interactive Small-Group Fundamentals Sessions</span>
+                                <span>Dosage Calculations Mastery</span>
                             </li>
-                            <li class="flex items-start gap-2.5">
+                            <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-circle-check text-warmCoral mt-1"></i>
-                                <span>Critical Thinking &amp; Exam Question Breakdown</span>
+                                <span>NCLEX, ATI &amp; HESI Readiness</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="space-y-2.5 pt-4 border-t border-slate-100">
-                        <button onclick="openServiceModal('tutoring')" class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-sm transition flex items-center justify-center gap-2">
+                    <div class="space-y-2 pt-4 border-t border-slate-100">
+                        <button onclick="openServiceModal('tutoring')" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-circle-info text-warmCoral"></i>
-                            <span>View Scope &amp; Details</span>
+                            <span>View Deliverables</span>
                         </button>
-                        <a href="#contact" onclick="selectBookingTab('Tutoring')" class="w-full py-3.5 px-4 rounded-xl bg-warmCoral hover:bg-coralDark text-white font-extrabold text-sm transition flex items-center justify-center gap-2 shadow-md shadow-warmCoral/20">
+                        <button type="button" onclick="openInquiryModal('Nursing Tutoring')" class="w-full py-3 px-4 rounded-xl bg-warmCoral hover:bg-coralDark text-white font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-md shadow-warmCoral/20">
                             <span>Book Tutoring</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Guest Lecturing -->
+                <div class="reveal bg-white rounded-3xl p-7 shadow-lg shadow-slate-200/60 border border-slate-100 hover:border-tealAccent hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-softMint text-tealDark group-hover:bg-clinicalNavy group-hover:text-electricTeal flex items-center justify-center text-xl transition-colors">
+                                <i class="fa-solid fa-microphone-lines"></i>
+                            </div>
+                            <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">Seminars &amp; Events</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-clinicalNavy mb-3 group-hover:text-tealDark transition">Guest Lecturing</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Engaging academic and clinical guest lectures, faculty development workshops, and student seminars on core nursing concepts and clinical judgment.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-7">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-tealAccent mt-1"></i>
+                                <span>Didactic &amp; Clinical Guest Lectures</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-tealAccent mt-1"></i>
+                                <span>Faculty Development Workshops</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-tealAccent mt-1"></i>
+                                <span>Student Seminars &amp; Bootcamps</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2 pt-4 border-t border-slate-100">
+                        <button onclick="openServiceModal('lecturing')" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info text-tealDark"></i>
+                            <span>View Deliverables</span>
+                        </button>
+                        <button type="button" onclick="openInquiryModal('Guest Lecturing')" class="w-full py-3 px-4 rounded-xl bg-clinicalNavy hover:bg-tealAccent text-white hover:text-clinicalNavy font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-md">
+                            <span>Invite to Speak</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -464,174 +599,111 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE @KIMSNURSINGGEMS STUDENT CORNER & FLASHCARD/QUIZ HUB -->
-    <section id="nursing-gems" class="py-24 bg-gradient-to-br from-softMint/70 via-white to-softMint/50 border-y border-electricTeal/20 relative overflow-hidden">
+    <!-- INTERACTIVE NURSING EDUCATION APPROACH & OUTCOMES SHOWCASE -->
+    <section id="approach" class="py-24 bg-gradient-to-br from-softMint/70 via-white to-softMint/50 border-y border-tealAccent/20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Column: @kimsnursinggems Brand Story & Social Callout -->
+                <!-- Left Column: Educational Philosophy & Focus -->
                 <div class="lg:col-span-5 space-y-6 reveal">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warmCoral text-white text-xs font-extrabold uppercase tracking-wider shadow-md shadow-warmCoral/20">
-                        <i class="fa-solid fa-gem"></i> Student Resource Hub
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-clinicalNavy text-electricTeal text-xs font-extrabold uppercase tracking-wider shadow-md">
+                        <i class="fa-solid fa-compass-drafting"></i> Educational Framework
                     </div>
 
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-clinicalNavy tracking-tight leading-tight">
-                        Learn the <span class="text-warmCoral">@kimsnursinggems</span> Way
+                        Targeted Impact for <span class="text-tealDark">Institutions</span> &amp; <span class="text-warmCoral">Learners</span>
                     </h2>
 
                     <p class="text-slate-700 text-base sm:text-lg leading-relaxed">
-                        Nursing school shouldn't feel like memorizing a foreign language alone. Through <strong>@kimsnursinggems</strong>, we turn intimidating nursing fundamentals into bite-sized, crystal-clear clinical gems you can actually remember at the bedside and on exam day.
+                        Effective nursing education aligns rigorous curriculum standards with clear, active clinical reasoning. Explore how <strong>KReed Nursing Solutions LLC</strong> tailors its methodology for academic leaders and nursing students.
                     </p>
 
-                    <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm space-y-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-clinicalNavy text-electricTeal flex items-center justify-center font-bold">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-clinicalNavy text-sm">Try Our Interactive Study Deck</h4>
-                                <p class="text-xs text-slate-500">Flip the Nursing Gem flashcard or test yourself with a quick NCLEX-style check!</p>
-                            </div>
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm flex items-start gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-warmCoral/15 text-warmCoral flex items-center justify-center font-bold shrink-0">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-clinicalNavy text-sm">Interactive Focus Switcher</h4>
+                            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Toggle between <strong>Programs &amp; Faculty</strong> and <strong>Nursing Students</strong> to inspect our structured educational pillars and outcomes.</p>
                         </div>
                     </div>
 
-                    <!-- Social Media Follow Buttons -->
-                    <div class="pt-2 flex flex-wrap items-center gap-3">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-clinicalNavy hover:bg-clinicalDeep text-white font-bold text-sm shadow-lg transition flex items-center gap-2.5">
-                            <i class="fa-brands fa-instagram text-warmCoral text-lg"></i>
-                            <span>Follow @kimsnursinggems</span>
-                        </a>
-                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-clinicalNavy border border-slate-200 font-bold text-sm transition flex items-center gap-2">
-                            <i class="fa-brands fa-tiktok text-tealDark"></i>
-                            <span>Daily Study Clips</span>
-                        </a>
+                    <div class="pt-1">
+                        <button type="button" onclick="openInquiryModal()" class="px-7 py-3.5 rounded-xl bg-clinicalNavy hover:bg-clinicalDeep text-white font-bold text-sm shadow-lg transition inline-flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-electricTeal"></i>
+                            <span>Discuss Your Educational Goals</span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Right Column: Interactive Flashcard & Quick Quiz Switcher -->
+                <!-- Right Column: Interactive Audience & Pillar Explorer -->
                 <div class="lg:col-span-7 reveal">
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-clinicalNavy/10 border border-slate-200/80">
                         
-                        <!-- Interactive Mode Tabs -->
+                        <!-- Audience Toggle Tabs -->
                         <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
-                            <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl">
-                                <button id="tab-flashcard" onclick="switchGemMode('flashcard')" class="px-4 py-2 rounded-lg bg-clinicalNavy text-white font-bold text-xs sm:text-sm transition shadow-xs">
-                                    <i class="fa-solid fa-rotate mr-1.5 text-electricTeal"></i> Daily Nursing Gem
+                            <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl w-full sm:w-auto">
+                                <button id="tab-institutions" onclick="switchAudienceTrack('institutions')" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg bg-clinicalNavy text-white font-bold text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-building-columns text-electricTeal"></i>
+                                    <span>Programs &amp; Faculty</span>
                                 </button>
-                                <button id="tab-quiz" onclick="switchGemMode('quiz')" class="px-4 py-2 rounded-lg text-slate-600 hover:text-clinicalNavy font-bold text-xs sm:text-sm transition">
-                                    <i class="fa-solid fa-circle-question mr-1.5 text-warmCoral"></i> Quick Practice Check
+                                <button id="tab-students" onclick="switchAudienceTrack('students')" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-slate-600 hover:text-clinicalNavy font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-user-graduate text-warmCoral"></i>
+                                    <span>Nursing Students</span>
                                 </button>
                             </div>
 
-                            <span id="gem-counter" class="text-xs font-extrabold uppercase tracking-wider text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/70">
-                                Gem 1 of 4
+                            <span id="track-badge" class="text-xs font-extrabold uppercase tracking-wider text-tealDark bg-softMint px-3 py-1.5 rounded-lg">
+                                Institutional Excellence
                             </span>
                         </div>
 
-                        <!-- MODE 1: INTERACTIVE FLIP FLASHCARD -->
-                        <div id="mode-flashcard" class="space-y-6">
-                            <div class="perspective-1000 w-full h-72 sm:h-80 cursor-pointer" onclick="flipGemCard()">
-                                <div id="gem-card-inner" class="relative w-full h-full transform-style-3d">
-                                    
-                                    <!-- Front of Flashcard -->
-                                    <div class="absolute inset-0 backface-hidden rounded-2xl bg-gradient-to-br from-clinicalNavy via-clinicalDeep to-clinicalNavy text-white p-6 sm:p-8 flex flex-col justify-between border border-electricTeal/30 shadow-xl">
-                                        <div class="flex items-center justify-between">
-                                            <span id="gem-category" class="px-3 py-1 rounded-full bg-electricTeal/20 text-electricTeal text-xs font-extrabold uppercase tracking-wider">
-                                                Fundamentals &bull; Prioritization
-                                            </span>
-                                            <span class="text-xs text-slate-400 flex items-center gap-1.5">
-                                                <i class="fa-solid fa-hand-pointer text-warmCoral"></i> Tap to flip
-                                            </span>
-                                        </div>
+                        <!-- Dynamic Content Panel -->
+                        <div id="track-content" class="space-y-6">
+                            <div class="bg-gradient-to-br from-clinicalNavy via-clinicalDeep to-clinicalNavy text-white rounded-2xl p-6 sm:p-7 border border-electricTeal/30">
+                                <p id="track-eyebrow" class="text-xs uppercase tracking-widest text-electricTeal font-bold mb-2">Academic &amp; Faculty Partnership</p>
+                                <h3 id="track-headline" class="text-xl sm:text-2xl font-extrabold leading-snug mb-3">
+                                    Strengthening Curriculum Alignment, Faculty Confidence &amp; Program Pass Rates
+                                </h3>
+                                <p id="track-summary" class="text-sm text-slate-300 leading-relaxed">
+                                    We collaborate with deans, program directors, and nursing faculty to modernize syllabi, embed Next Generation NCLEX (NGN) clinical judgment models, and prepare programs for accreditation reviews.
+                                </p>
+                            </div>
 
-                                        <div class="my-auto text-center px-2">
-                                            <p class="text-xs uppercase tracking-widest text-warmCoral font-bold mb-2">@kimsnursinggems Prompt</p>
-                                            <h3 id="gem-question" class="text-xl sm:text-2xl font-extrabold leading-snug">
-                                                When caring for a client with acute hypoxia, what is the FIRST nursing action before calling the provider?
-                                            </h3>
-                                        </div>
-
-                                        <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-white/10">
-                                            <span>KReed Nursing Solutions LLC</span>
-                                            <span class="text-electricTeal font-semibold">Click card for Clinical Gem &rarr;</span>
-                                        </div>
+                            <!-- 3 Dynamic Outcome Cards -->
+                            <div id="track-pillars" class="grid sm:grid-cols-3 gap-4">
+                                <div class="p-4 rounded-2xl bg-surfaceCream border border-slate-200/80">
+                                    <div class="w-9 h-9 rounded-lg bg-softMint text-tealDark flex items-center justify-center font-bold text-sm mb-3">
+                                        <i class="fa-solid fa-sitemap"></i>
                                     </div>
-
-                                    <!-- Back of Flashcard -->
-                                    <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-softMint via-white to-softMint text-clinicalNavy p-6 sm:p-8 flex flex-col justify-between border-2 border-electricTeal shadow-xl">
-                                        <div class="flex items-center justify-between">
-                                            <span class="px-3 py-1 rounded-full bg-clinicalNavy text-electricTeal text-xs font-extrabold uppercase tracking-wider">
-                                                <i class="fa-solid fa-gem mr-1"></i> The Nursing Gem
-                                            </span>
-                                            <span class="text-xs text-slate-500 font-semibold">Tap to flip back</span>
-                                        </div>
-
-                                        <div class="my-auto space-y-3">
-                                            <h4 id="gem-answer-title" class="text-lg sm:text-xl font-extrabold text-clinicalNavy">
-                                                Raise the Head of the Bed (High-Fowler's Position)!
-                                            </h4>
-                                            <p id="gem-answer-detail" class="text-sm sm:text-base text-slate-700 leading-relaxed">
-                                                Always assess and intervene physically first! Elevating the HOB maximizes chest expansion and lung ventilation immediately—before applying oxygen or notifying the healthcare provider.
-                                            </p>
-                                        </div>
-
-                                        <div class="bg-clinicalNavy/5 rounded-xl p-3 flex items-center gap-2.5 text-xs font-bold text-clinicalNavy">
-                                            <i class="fa-solid fa-star text-warmCoral"></i>
-                                            <span id="gem-takeaway">Memory Hook: "Position before oxygen, assess before calling!"</span>
-                                        </div>
+                                    <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Curriculum Mapping</h4>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Eliminate content gaps and align course objectives with AACN Essentials.</p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-surfaceCream border border-slate-200/80">
+                                    <div class="w-9 h-9 rounded-lg bg-warmCoral/15 text-warmCoral flex items-center justify-center font-bold text-sm mb-3">
+                                        <i class="fa-solid fa-file-pen"></i>
                                     </div>
-
+                                    <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">NGN Assessment</h4>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Faculty workshops on writing clinical judgment case studies and test items.</p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-surfaceCream border border-slate-200/80">
+                                    <div class="w-9 h-9 rounded-lg bg-clinicalNavy text-electricTeal flex items-center justify-center font-bold text-sm mb-3">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                    <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Board Readiness</h4>
+                                    <p class="text-xs text-slate-600 leading-relaxed">Structured self-study reviews and remediation plans for sustained compliance.</p>
                                 </div>
                             </div>
 
-                            <!-- Flashcard Controls -->
-                            <div class="flex items-center justify-between gap-3">
-                                <button onclick="prevGem()" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-clinicalNavy font-bold text-sm transition flex items-center gap-2">
-                                    <i class="fa-solid fa-arrow-left"></i>
-                                    <span>Previous</span>
-                                </button>
-
-                                <button onclick="flipGemCard()" class="px-5 py-2.5 rounded-xl bg-electricTeal/15 hover:bg-electricTeal/25 text-tealDark font-extrabold text-sm transition">
-                                    <i class="fa-solid fa-rotate mr-1.5"></i> Flip Card
-                                </button>
-
-                                <button onclick="nextGem()" class="px-4 py-2.5 rounded-xl bg-clinicalNavy hover:bg-clinicalDeep text-white font-bold text-sm transition flex items-center gap-2">
-                                    <span>Next Gem</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
+                            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100">
+                                <p id="track-cta-note" class="text-xs font-semibold text-slate-500">
+                                    Available for single-course reviews, faculty retreats, or ongoing consulting.
+                                </p>
+                                <button id="track-cta-btn" type="button" onclick="openInquiryModal('Curriculum Advising')" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-electricTeal to-tealAccent text-clinicalNavy font-extrabold text-xs sm:text-sm shadow-md transition">
+                                    Inquire for Your Program &rarr;
                                 </button>
                             </div>
-                        </div>
-
-                        <!-- MODE 2: INTERACTIVE MINI NCLEX-STYLE QUIZ -->
-                        <div id="mode-quiz" class="hidden space-y-5">
-                            <div class="bg-surfaceCream rounded-2xl p-5 border border-slate-200/80">
-                                <span class="text-xs font-extrabold uppercase tracking-wider text-warmCoral block mb-1.5">Clinical Judgment Check</span>
-                                <h4 class="text-base sm:text-lg font-extrabold text-clinicalNavy leading-snug">
-                                    A postoperative client has a respiratory rate of 8 breaths/min after receiving IV morphine. Which medication should the nurse prepare to administer?
-                                </h4>
-                            </div>
-
-                            <div id="quiz-options" class="space-y-2.5">
-                                <button onclick="checkQuizAnswer(this, false)" class="quiz-opt w-full text-left p-4 rounded-xl border border-slate-200 hover:border-electricTeal bg-white font-semibold text-sm text-clinicalNavy transition flex items-center justify-between">
-                                    <span>A. Flumazenil (Romazicon)</span>
-                                    <span class="opt-icon"></span>
-                                </button>
-                                <button onclick="checkQuizAnswer(this, true)" class="quiz-opt w-full text-left p-4 rounded-xl border border-slate-200 hover:border-electricTeal bg-white font-semibold text-sm text-clinicalNavy transition flex items-center justify-between">
-                                    <span>B. Naloxone (Narcan)</span>
-                                    <span class="opt-icon"></span>
-                                </button>
-                                <button onclick="checkQuizAnswer(this, false)" class="quiz-opt w-full text-left p-4 rounded-xl border border-slate-200 hover:border-electricTeal bg-white font-semibold text-sm text-clinicalNavy transition flex items-center justify-between">
-                                    <span>C. Protamine Sulfate</span>
-                                    <span class="opt-icon"></span>
-                                </button>
-                                <button onclick="checkQuizAnswer(this, false)" class="quiz-opt w-full text-left p-4 rounded-xl border border-slate-200 hover:border-electricTeal bg-white font-semibold text-sm text-clinicalNavy transition flex items-center justify-between">
-                                    <span>D. Acetylcysteine (Mucomyst)</span>
-                                    <span class="opt-icon"></span>
-                                </button>
-                            </div>
-
-                            <div id="quiz-feedback" class="hidden rounded-2xl p-4 text-sm leading-relaxed"></div>
                         </div>
 
                     </div>
@@ -655,19 +727,19 @@
                                 <i class="fa-solid fa-hand-holding-heart"></i>
                             </div>
                             <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">
-                                Bridging Classroom Theory with Bedside Confidence
+                                Bridging Classroom Theory with Clinical Judgment
                             </h3>
                             <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                                At KReed Nursing Solutions LLC, we believe safe, compassionate patient care starts with empowered learners, well-structured curricula, and visionary clinical leadership.
+                                At KReed Nursing Solutions LLC, we believe safe, compassionate patient care starts with well-structured nursing curricula, supported educators, and confident learners.
                             </p>
                             <div class="pt-4 border-t border-white/10 grid grid-cols-2 gap-4">
                                 <div class="bg-white/5 p-4 rounded-2xl">
                                     <p class="text-electricTeal font-extrabold text-lg">Clarity First</p>
-                                    <p class="text-xs text-slate-400 mt-1">Complex concepts broken into actionable steps</p>
+                                    <p class="text-xs text-slate-400 mt-1">Complex clinical concepts broken into structured frameworks</p>
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-2xl">
-                                    <p class="text-warmCoral font-extrabold text-lg">Student &amp; Pro</p>
-                                    <p class="text-xs text-slate-400 mt-1">Support from first semester to clinical leadership</p>
+                                    <p class="text-warmCoral font-extrabold text-lg">End-to-End</p>
+                                    <p class="text-xs text-slate-400 mt-1">Supporting institutional curricula and individual students</p>
                                 </div>
                             </div>
                         </div>
@@ -680,30 +752,30 @@
                         About KReed Nursing Solutions LLC
                     </span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-clinicalNavy tracking-tight">
-                        Clinical Expertise Meets Passionate Nurse Education
+                        Clinical Expertise Meets Dedicated Nurse Education
                     </h2>
                     <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
-                        Founded on a commitment to nursing excellence, <strong>KReed Nursing Solutions LLC</strong> serves as a trusted partner to healthcare facilities, academic nursing programs, and aspiring nurses nationwide.
+                        Founded on a commitment to excellence in nursing education, <strong>KReed Nursing Solutions LLC</strong> serves as a trusted educational partner to nursing schools, faculty, healthcare organizations, and aspiring nurses.
                     </p>
                     <p class="text-slate-600 text-base leading-relaxed">
-                        Whether consulting on clinical best practices, advising educators on curriculum structure, or mentoring students through <strong>@kimsnursinggems</strong> and individualized tutoring, every engagement is rooted in clarity, clinical judgment, and real-world readiness.
+                        Whether consulting on accreditation and academic outcomes, advising educators on curriculum redesign, delivering high-impact guest lectures, or coaching nursing students through foundational and exam-prep coursework, every engagement is rooted in clarity, evidence-based pedagogy, and clinical readiness.
                     </p>
 
                     <div class="grid sm:grid-cols-3 gap-4 pt-4">
                         <div class="p-5 rounded-2xl bg-surfaceCream border border-slate-200/80">
-                            <i class="fa-solid fa-compass text-electricTeal text-xl mb-2.5"></i>
-                            <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Strategic Vision</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">Practical clinical insights aligned with current healthcare standards.</p>
+                            <i class="fa-solid fa-compass text-tealAccent text-xl mb-2.5"></i>
+                            <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Academic Strategy</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Data-informed consulting aligned with current nursing education standards.</p>
                         </div>
                         <div class="p-5 rounded-2xl bg-surfaceCream border border-slate-200/80">
                             <i class="fa-solid fa-chalkboard-user text-warmCoral text-xl mb-2.5"></i>
-                            <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Curriculum Mastery</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">Designing learning pathways that boost comprehension and retention.</p>
+                            <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Curriculum Design</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Building cohesive learning pathways that strengthen student retention.</p>
                         </div>
                         <div class="p-5 rounded-2xl bg-surfaceCream border border-slate-200/80">
                             <i class="fa-solid fa-seedling text-tealDark text-xl mb-2.5"></i>
-                            <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Empowering Growth</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">Building confident nurses ready to thrive in high-acuity environments.</p>
+                            <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">Learner Mastery</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Equipping future nurses with clinical reasoning and exam confidence.</p>
                         </div>
                     </div>
                 </div>
@@ -712,142 +784,27 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE BOOKING & CONTACT SECTION -->
-    <section id="contact" class="py-24 bg-clinicalNavy text-white relative overflow-hidden">
+    <!-- DIRECT INQUIRY CALL-TO-ACTION BANNER -->
+    <section id="contact" class="py-20 bg-clinicalNavy text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left Contact Info & Direct Channels -->
-                <div class="lg:col-span-5 space-y-8 reveal">
-                    <div class="space-y-4">
-                        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-electricTeal/20 text-electricTeal text-xs font-extrabold uppercase tracking-wider">
-                            <i class="fa-solid fa-paper-plane"></i> Connect &amp; Book
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                            Ready to Elevate Your Nursing Journey or Program?
-                        </h2>
-                        <p class="text-slate-300 text-base leading-relaxed">
-                            Select a service area to tailor your inquiry. We respond to all consulting, curriculum advising, and tutoring requests within 24–48 business hours.
-                        </p>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-electricTeal/20 text-electricTeal flex items-center justify-center text-lg shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Direct Inquiries</h4>
-                                <p class="text-sm text-slate-300 mt-0.5">contact@kreednursingsolutions.com</p>
-                            </div>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-warmCoral/20 text-warmCoral flex items-center justify-center text-lg shrink-0">
-                                <i class="fa-solid fa-gem"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Student Community</h4>
-                                <p class="text-sm text-slate-300 mt-0.5">@kimsnursinggems on Instagram &amp; TikTok</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Interactive Booking Form -->
-                <div class="lg:col-span-7 reveal">
-                    <div class="bg-white text-clinicalNavy rounded-3xl p-6 sm:p-10 shadow-2xl">
-                        
-                        <!-- Service Selector Tabs -->
-                        <div class="mb-6">
-                            <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-400 mb-3">
-                                1. Choose Your Area of Interest
-                            </label>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="booking-tabs">
-                                <button type="button" onclick="selectBookingTab('Nurse Consulting')" data-service="Nurse Consulting" class="booking-tab active-tab py-3 px-4 rounded-xl border-2 border-electricTeal bg-softMint/60 text-clinicalNavy font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-briefcase-medical text-tealDark"></i>
-                                    <span>Nurse Consulting</span>
-                                </button>
-                                <button type="button" onclick="selectBookingTab('Curriculum Advising')" data-service="Curriculum Advising" class="booking-tab py-3 px-4 rounded-xl border-2 border-slate-200 bg-white hover:border-slate-300 text-slate-600 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-book-open-reader text-electricTeal"></i>
-                                    <span>Curriculum Advising</span>
-                                </button>
-                                <button type="button" onclick="selectBookingTab('Tutoring')" data-service="Tutoring" class="booking-tab py-3 px-4 rounded-xl border-2 border-slate-200 bg-white hover:border-slate-300 text-slate-600 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-user-graduate text-warmCoral"></i>
-                                    <span>Tutoring</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Form Container -->
-                        <form id="booking-form" onsubmit="submitBookingForm(event)" class="space-y-5">
-                            <input type="hidden" id="selected-service-input" value="Nurse Consulting">
-
-                            <div class="grid sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label for="client-name" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">Full Name <span class="text-warmCoral">*</span></label>
-                                    <input type="text" id="client-name" required placeholder="e.g., Jordan Taylor, BSN" class="w-full px-4 py-3.5 rounded-xl bg-surfaceCream border border-slate-200 focus:border-electricTeal focus:ring-2 focus:ring-electricTeal/20 outline-none text-sm font-medium transition">
-                                </div>
-                                <div>
-                                    <label for="client-email" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">Email Address <span class="text-warmCoral">*</span></label>
-                                    <input type="email" id="client-email" required placeholder="you@example.com" class="w-full px-4 py-3.5 rounded-xl bg-surfaceCream border border-slate-200 focus:border-electricTeal focus:ring-2 focus:ring-electricTeal/20 outline-none text-sm font-medium transition">
-                                </div>
-                            </div>
-
-                            <div class="grid sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label for="client-role" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">I Am A...</label>
-                                    <select id="client-role" class="w-full px-4 py-3.5 rounded-xl bg-surfaceCream border border-slate-200 focus:border-electricTeal focus:ring-2 focus:ring-electricTeal/20 outline-none text-sm font-medium transition">
-                                        <option value="Nursing Student">Nursing Student (LPN / ADN / BSN / MSN)</option>
-                                        <option value="Healthcare Organization / Leader">Healthcare Organization / Nurse Leader</option>
-                                        <option value="Nursing Faculty / Academic Program">Nursing Faculty / Academic Program</option>
-                                        <option value="Licensed Nurse">Licensed Nurse Seeking Mentorship</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="session-format" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">Preferred Format</label>
-                                    <select id="session-format" class="w-full px-4 py-3.5 rounded-xl bg-surfaceCream border border-slate-200 focus:border-electricTeal focus:ring-2 focus:ring-electricTeal/20 outline-none text-sm font-medium transition">
-                                        <option value="1-on-1 Virtual Session">1-on-1 Virtual Consultation / Tutoring</option>
-                                        <option value="Small Group Tutoring">Small Group Tutoring Session</option>
-                                        <option value="Institutional / Program Review">Institutional / Curriculum Review</option>
-                                        <option value="Ongoing Consulting Retainer">Ongoing Consulting Partnership</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="client-notes" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-2">Goals, Courses, or Project Details <span class="text-warmCoral">*</span></label>
-                                <textarea id="client-notes" rows="4" required placeholder="Tell us about your nursing fundamentals goals, curriculum objectives, or clinical consulting needs..." class="w-full px-4 py-3.5 rounded-xl bg-surfaceCream border border-slate-200 focus:border-electricTeal focus:ring-2 focus:ring-electricTeal/20 outline-none text-sm font-medium transition resize-none"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-electricTeal to-tealDark hover:opacity-95 text-clinicalNavy font-extrabold text-base shadow-xl shadow-electricTeal/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                                <span id="submit-btn-label">Submit Nurse Consulting Inquiry</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </form>
-
-                        <!-- Instant Visual Confirmation State (Hidden until submitted) -->
-                        <div id="booking-confirmation" class="hidden text-center py-8 space-y-5">
-                            <div class="w-16 h-16 rounded-2xl bg-softMint text-tealDark flex items-center justify-center text-3xl mx-auto shadow-md">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
-                            <div class="space-y-2">
-                                <span id="conf-service-badge" class="inline-block px-3 py-1 rounded-full bg-warmCoral/15 text-warmCoral text-xs font-extrabold uppercase tracking-wider"></span>
-                                <h3 class="text-2xl font-extrabold text-clinicalNavy">Inquiry Received!</h3>
-                                <p id="conf-message" class="text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed"></p>
-                            </div>
-                            <div class="pt-2">
-                                <button type="button" onclick="resetBookingForm()" class="px-6 py-3 rounded-xl bg-clinicalNavy hover:bg-clinicalDeep text-white font-bold text-sm transition">
-                                    Submit Another Request
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-7 reveal">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-electricTeal/20 text-electricTeal text-xs font-extrabold uppercase tracking-wider">
+                <i class="fa-solid fa-paper-plane"></i> Direct Inquiries
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight">
+                Partner With KReed Nursing Solutions LLC
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Ready to discuss nurse consulting, curriculum advising, personalized nursing tutoring, or a guest lecture for your institution? Open a direct inquiry and our team will respond promptly.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button type="button" onclick="openInquiryModal()" class="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gradient-to-r from-electricTeal to-tealAccent hover:opacity-95 text-clinicalNavy font-extrabold text-base shadow-xl shadow-tealAccent/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <span>Open Direct Inquiry Form</span>
+                </button>
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-base transition">
+                    Review All 4 Services
+                </a>
             </div>
         </div>
     </section>
@@ -857,39 +814,33 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
                 <div class="flex items-center gap-3.5">
-                    <div class="w-10 h-10 rounded-xl bg-electricTeal text-clinicalNavy flex items-center justify-center text-lg font-bold">
-                        <i class="fa-solid fa-gem"></i>
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-electricTeal to-tealAccent text-clinicalNavy flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <div>
                         <span class="font-display text-white font-extrabold text-lg block leading-none">KReed Nursing Solutions LLC</span>
-                        <span class="text-xs text-electricTeal font-semibold mt-1 block">Home of @kimsnursinggems</span>
+                        <span class="text-xs text-electricTeal font-semibold mt-1 block">Nursing Education Consulting &amp; Academic Support</span>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
-                    <a href="#services" class="hover:text-electricTeal transition">Nurse Consulting</a>
-                    <a href="#services" class="hover:text-electricTeal transition">Curriculum Advising</a>
-                    <a href="#services" class="hover:text-electricTeal transition">Tutoring</a>
-                    <a href="#nursing-gems" class="hover:text-warmCoral transition">@kimsnursinggems</a>
-                    <a href="#contact" class="hover:text-electricTeal transition">Book Now</a>
+                    <a href="#about" class="hover:text-electricTeal transition">About</a>
+                    <a href="#services" class="hover:text-electricTeal transition">Services</a>
+                    <a href="#approach" class="hover:text-electricTeal transition">Approach</a>
+                    <button type="button" onclick="openInquiryModal()" class="hover:text-electricTeal transition">Direct Inquiry</button>
                 </div>
 
-                <div class="flex items-center gap-3">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-warmCoral hover:text-white flex items-center justify-center transition" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-electricTeal hover:text-clinicalNavy flex items-center justify-center transition" aria-label="TikTok">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-electricTeal hover:text-clinicalNavy flex items-center justify-center transition" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
+                <div>
+                    <button type="button" onclick="openInquiryModal()" class="px-5 py-2.5 rounded-xl bg-warmCoral hover:bg-coralDark text-white font-bold text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Direct Inquiry</span>
+                    </button>
                 </div>
             </div>
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                 <p>&copy; 2026 KReed Nursing Solutions LLC. All rights reserved.</p>
-                <p>Educational &amp; consulting content is for academic and professional guidance purposes.</p>
+                <p>Dedicated to excellence in nursing education, curriculum design, and clinical judgment.</p>
             </div>
         </div>
     </footer>
@@ -908,45 +859,58 @@
             mobileMenu.classList.add('hidden');
         }
 
-        // 2. Service Modal Data & Controls
+        // 2. Service Modal Data & Controls (4 Nursing Education Services)
         const serviceDetails = {
             consulting: {
                 title: 'Nurse Consulting',
-                badge: 'Clinical Strategy & Healthcare Insights',
+                badge: 'Academic Strategy & Program Readiness',
                 badgeClass: 'bg-softMint text-tealDark',
                 serviceName: 'Nurse Consulting',
-                desc: 'We partner with healthcare organizations, clinical leaders, and nursing professionals to solve operational bottlenecks, strengthen clinical workflows, and elevate evidence-based practice.',
+                desc: 'We collaborate with nursing schools, academic leaders, and clinical education departments to evaluate program outcomes, strengthen faculty effectiveness, and ensure readiness for accreditation and Board of Nursing reviews.',
                 bullets: [
-                    'Clinical workflow assessment & quality improvement strategy',
-                    'Evidence-based protocol development & bedside readiness',
-                    'Healthcare leadership coaching & professional guidance',
-                    'Customized consulting packages for clinics & organizations'
+                    'Accreditation self-study review, compliance audits & mock site visits',
+                    'Program evaluation, retention strategy & NCLEX pass-rate improvement plans',
+                    'Faculty mentoring, onboarding frameworks & classroom/clinical alignment',
+                    'Simulation lab structure and debriefing best-practice consulting'
                 ]
             },
             curriculum: {
                 title: 'Curriculum Advising',
-                badge: 'Academic Program Optimization',
+                badge: 'Concept & Competency-Based Design',
                 badgeClass: 'bg-clinicalNavy text-electricTeal',
                 serviceName: 'Curriculum Advising',
-                desc: 'Designed for nursing schools, educators, and program directors looking to modernize course design, integrate active learning, and improve student progression and NCLEX readiness.',
+                desc: 'Tailored curriculum advising for LPN/VN, ADN, BSN, and graduate nursing programs seeking modern, cohesive coursework aligned with national standards and Next Generation NCLEX (NGN) clinical judgment.',
                 bullets: [
-                    'Nursing fundamentals & core course syllabus mapping',
-                    'Active learning, case study, and clinical judgment integration',
-                    'Student retention & early-intervention remediation frameworks',
-                    'Faculty workshops on simplifying complex clinical concepts'
+                    'Comprehensive syllabus auditing & curriculum mapping across semesters',
+                    'Transitioning to concept-based and competency-based learning models',
+                    'Alignment with AACN Essentials and state Board of Nursing standards',
+                    'Integrating NGN clinical judgment case studies and active learning strategies'
                 ]
             },
             tutoring: {
                 title: 'Nursing Tutoring',
-                badge: '1-on-1 & Group Student Mastery',
+                badge: '1-on-1 & Small-Group Academic Coaching',
                 badgeClass: 'bg-warmCoral/15 text-warmCoral',
-                serviceName: 'Tutoring',
-                desc: 'Tailored academic coaching inspired by @kimsnursinggems. We help nursing students master foundational concepts, decode prioritization questions, and walk into exams with calm confidence.',
+                serviceName: 'Nursing Tutoring',
+                desc: 'Individualized and small-group tutoring engineered to help nursing students master foundational sciences, sharpen clinical reasoning, and excel on course exams and licensure assessments.',
                 bullets: [
-                    'Personalized 1-on-1 tutoring tailored to your syllabus',
-                    'Interactive small-group study sessions for peers & cohorts',
-                    'Step-by-step NCLEX-style critical thinking & test strategies',
-                    'Custom study guides & memory hooks for core fundamentals'
+                    'Targeted coaching in Nursing Fundamentals, Pathophysiology & Pharmacology',
+                    'Step-by-step Dosage Calculations accuracy and clinical math confidence',
+                    'NCLEX, ATI, and HESI exam preparation with question-breakdown strategies',
+                    'Customized study plans tailored to your nursing program syllabus'
+                ]
+            },
+            lecturing: {
+                title: 'Guest Lecturing',
+                badge: 'Academic Seminars & Faculty Workshops',
+                badgeClass: 'bg-softMint text-tealDark',
+                serviceName: 'Guest Lecturing',
+                desc: 'Dynamic, evidence-based guest lectures for nursing classrooms, student cohorts, clinical orientations, and faculty professional development events—available virtually or on-site.',
+                bullets: [
+                    'Engaging didactic guest lectures on core nursing fundamentals & clinical judgment',
+                    'Faculty development workshops on active learning and NGN test-item writing',
+                    'Student readiness seminars, NCLEX transition bootcamps & study workshops',
+                    'Custom lecture topics tailored to your course objectives and cohort level'
                 ]
             }
         };
@@ -970,15 +934,14 @@
 
             bullets.innerHTML = data.bullets.map(item => `
                 <li class="flex items-start gap-2.5">
-                    <i class="fa-solid fa-check text-electricTeal mt-1"></i>
+                    <i class="fa-solid fa-check text-tealAccent mt-1"></i>
                     <span>${item}</span>
                 </li>
             `).join('');
 
             bookBtn.onclick = () => {
                 closeServiceModal();
-                selectBookingTab(data.serviceName);
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                openInquiryModal(data.serviceName);
             };
 
             modal.classList.remove('hidden');
@@ -1000,167 +963,228 @@
             }, 200);
         }
 
+        // 3. Interactive Nursing Education Track Switcher (Programs/Faculty vs. Nursing Students)
+        const trackData = {
+            institutions: {
+                badge: 'Institutional Excellence',
+                eyebrow: 'Academic & Faculty Partnership',
+                headline: 'Strengthening Curriculum Alignment, Faculty Confidence & Program Pass Rates',
+                summary: 'We collaborate with deans, program directors, and nursing faculty to modernize syllabi, embed Next Generation NCLEX (NGN) clinical judgment models, and prepare programs for accreditation reviews.',
+                ctaNote: 'Available for single-course reviews, faculty workshops, guest lectures, or ongoing consulting.',
+                ctaText: 'Inquire for Your Program →',
+                ctaService: 'Curriculum Advising',
+                pillars: [
+                    {
+                        icon: 'fa-sitemap',
+                        iconClass: 'bg-softMint text-tealDark',
+                        title: 'Curriculum Mapping',
+                        desc: 'Eliminate content gaps and align course objectives with AACN Essentials.'
+                    },
+                    {
+                        icon: 'fa-file-pen',
+                        iconClass: 'bg-warmCoral/15 text-warmCoral',
+                        title: 'NGN Assessment',
+                        desc: 'Faculty workshops on writing clinical judgment case studies and test items.'
+                    },
+                    {
+                        icon: 'fa-shield-halved',
+                        iconClass: 'bg-clinicalNavy text-electricTeal',
+                        title: 'Board Readiness',
+                        desc: 'Structured self-study reviews and remediation plans for sustained compliance.'
+                    }
+                ]
+            },
+            students: {
+                badge: 'Student Success & Mastery',
+                eyebrow: 'Individualized Academic Coaching',
+                headline: 'Turning Complex Nursing Concepts Into Clear Clinical Reasoning',
+                summary: 'Through structured 1-on-1 and small-group tutoring, students build lasting mastery in nursing fundamentals, pathophysiology, pharmacology, dosage calculations, and high-stakes licensure exams.',
+                ctaNote: 'Flexible virtual tutoring sessions tailored to LPN, ADN, BSN, and MSN coursework.',
+                ctaText: 'Inquire About Tutoring →',
+                ctaService: 'Nursing Tutoring',
+                pillars: [
+                    {
+                        icon: 'fa-heart-pulse',
+                        iconClass: 'bg-warmCoral/15 text-warmCoral',
+                        title: 'Core Coursework',
+                        desc: 'Focused clarity in Fundamentals, Pathophysiology, Pharmacology & Med-Surg.'
+                    },
+                    {
+                        icon: 'fa-calculator',
+                        iconClass: 'bg-softMint text-tealDark',
+                        title: 'Dosage Calculations',
+                        desc: 'Step-by-step dimensional analysis and clinical math accuracy training.'
+                    },
+                    {
+                        icon: 'fa-award',
+                        iconClass: 'bg-clinicalNavy text-electricTeal',
+                        title: 'NCLEX / ATI / HESI',
+                        desc: 'Prioritization frameworks and clinical judgment strategies for exam day.'
+                    }
+                ]
+            }
+        };
+
+        function switchAudienceTrack(trackKey) {
+            const data = trackData[trackKey];
+            if (!data) return;
+
+            const tabInst = document.getElementById('tab-institutions');
+            const tabStud = document.getElementById('tab-students');
+
+            if (trackKey === 'institutions') {
+                tabInst.className = 'flex-1 sm:flex-initial px-4 py-2.5 rounded-lg bg-clinicalNavy text-white font-bold text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2';
+                tabStud.className = 'flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-slate-600 hover:text-clinicalNavy font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2';
+            } else {
+                tabStud.className = 'flex-1 sm:flex-initial px-4 py-2.5 rounded-lg bg-clinicalNavy text-white font-bold text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2';
+                tabInst.className = 'flex-1 sm:flex-initial px-4 py-2.5 rounded-lg text-slate-600 hover:text-clinicalNavy font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2';
+            }
+
+            document.getElementById('track-badge').textContent = data.badge;
+            document.getElementById('track-eyebrow').textContent = data.eyebrow;
+            document.getElementById('track-headline').textContent = data.headline;
+            document.getElementById('track-summary').textContent = data.summary;
+            document.getElementById('track-cta-note').textContent = data.ctaNote;
+
+            const ctaBtn = document.getElementById('track-cta-btn');
+            ctaBtn.textContent = data.ctaText;
+            ctaBtn.onclick = () => openInquiryModal(data.ctaService);
+
+            const pillarsContainer = document.getElementById('track-pillars');
+            pillarsContainer.innerHTML = data.pillars.map(p => `
+                <div class="p-4 rounded-2xl bg-surfaceCream border border-slate-200/80">
+                    <div class="w-9 h-9 rounded-lg ${p.iconClass} flex items-center justify-center font-bold text-sm mb-3">
+                        <i class="fa-solid ${p.icon}"></i>
+                    </div>
+                    <h4 class="font-extrabold text-clinicalNavy text-sm mb-1">${p.title}</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">${p.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        // 4. Direct Inquiries Popup Modal & Email Forwarding Logic
+        // Assembled dynamically in JS so the destination address is never visibly listed in the HTML text
+        const _rUser = 'klatimo1';
+        const _rHost = 'gmail.com';
+
+        function openInquiryModal(preselectedService) {
+            const modal = document.getElementById('inquiry-modal');
+            const card = document.getElementById('inquiry-modal-card');
+            const serviceSelect = document.getElementById('inq-service');
+
+            // Reset to form view
+            document.getElementById('inquiry-form-wrapper').classList.remove('hidden');
+            document.getElementById('inquiry-success-state').classList.add('hidden');
+            document.getElementById('inq-error-banner').classList.add('hidden');
+
+            if (preselectedService && serviceSelect) {
+                serviceSelect.value = preselectedService;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 15);
+        }
+
+        function closeInquiryModal() {
+            const modal = document.getElementById('inquiry-modal');
+            const card = document.getElementById('inquiry-modal-card');
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 200);
+        }
+
+        function resetInquiryModal() {
+            document.getElementById('direct-inquiry-form').reset();
+            document.getElementById('inq-error-banner').classList.add('hidden');
+            document.getElementById('inquiry-form-wrapper').classList.remove('hidden');
+            document.getElementById('inquiry-success-state').classList.add('hidden');
+        }
+
+        async function handleDirectInquirySubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('inq-name').value.trim();
+            const email = document.getElementById('inq-email').value.trim();
+            const role = document.getElementById('inq-role').value;
+            const service = document.getElementById('inq-service').value;
+            const subject = document.getElementById('inq-subject').value.trim();
+            const message = document.getElementById('inq-message').value.trim();
+
+            const submitBtn = document.getElementById('inq-submit-btn');
+            const submitText = document.getElementById('inq-submit-text');
+            const submitIcon = document.getElementById('inq-submit-icon');
+            const errorBanner = document.getElementById('inq-error-banner');
+
+            errorBanner.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            submitText.textContent = 'Sending Inquiry...';
+            submitIcon.className = 'fa-solid fa-spinner fa-spin';
+
+            const endpoint = `https://formsubmit.co/ajax/${_rUser}@${_rHost}`;
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: `[KReed Nursing Solutions - ${service}] ${subject}`,
+                        _replyto: email,
+                        _template: 'table',
+                        Name: name,
+                        Email: email,
+                        'Role / Organization': role,
+                        'Service of Interest': service,
+                        Subject: subject,
+                        Message: message
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Submission response not ok');
+                }
+
+                // Show clean confirmation without exposing recipient email
+                document.getElementById('inq-sent-badge').textContent = service;
+                document.getElementById('inq-sent-copy').textContent = `Thank you, ${name}. Your inquiry regarding ${service} has been forwarded directly to KReed Nursing Solutions LLC. We will reply to ${email} within 24–48 business hours.`;
+
+                document.getElementById('inquiry-form-wrapper').classList.add('hidden');
+                document.getElementById('inquiry-success-state').classList.remove('hidden');
+            } catch (err) {
+                errorBanner.textContent = 'We encountered a temporary network issue sending your message. Please verify your internet connection and try submitting again.';
+                errorBanner.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                submitText.textContent = 'Send Direct Inquiry';
+                submitIcon.className = 'fa-solid fa-paper-plane';
+            }
+        }
+
+        // Close modals on backdrop click or Escape key
         window.addEventListener('click', (e) => {
-            const modal = document.getElementById('service-modal');
-            if (e.target === modal) closeServiceModal();
+            const serviceModal = document.getElementById('service-modal');
+            const inquiryModal = document.getElementById('inquiry-modal');
+            if (e.target === serviceModal) closeServiceModal();
+            if (e.target === inquiryModal) closeInquiryModal();
         });
 
-        // 3. @kimsnursinggems Interactive Flashcards
-        const nursingGems = [
-            {
-                category: 'Fundamentals • Prioritization',
-                question: 'When caring for a client with acute hypoxia, what is the FIRST nursing action before calling the provider?',
-                answerTitle: "Raise the Head of the Bed (High-Fowler's Position)!",
-                answerDetail: 'Always assess and intervene physically first! Elevating the HOB maximizes chest expansion and lung ventilation immediately—before applying oxygen or notifying the healthcare provider.',
-                takeaway: 'Memory Hook: "Position before oxygen, assess before calling!"'
-            },
-            {
-                category: 'Fluids & Electrolytes',
-                question: 'A client has a serum Potassium (K+) of 6.2 mEq/L. What is the nurse’s top priority assessment?',
-                answerTitle: 'Place the Client on Continuous Cardiac Monitoring (ECG)!',
-                answerDetail: 'Hyperkalemia directly affects cardiac conduction and can trigger life-threatening dysrhythmias (peaked T waves, widened QRS, ventricular fibrillation). Protect the heart first!',
-                takeaway: 'Memory Hook: "Potassium pumps the heart—check the ECG from the start!"'
-            },
-            {
-                category: 'Infection Control • Precautions',
-                question: 'Which PPE must the nurse don BEFORE entering the room of a client on Airborne Precautions (e.g., Tuberculosis)?',
-                answerTitle: 'A Fit-Tested N95 Respirator (or PAPR) & Negative Pressure Room!',
-                answerDetail: 'Airborne pathogens remain suspended in the air over long distances. Standard surgical masks are NOT sufficient—put on your N95 before crossing the threshold.',
-                takeaway: 'Memory Hook: "MTV = Measles, TB, Varicella require Airborne N95!"'
-            },
-            {
-                category: 'Medication Safety • Fundamentals',
-                question: 'Before administering Digoxin to an adult client, the apical pulse is 54 bpm. What should the nurse do?',
-                answerTitle: 'Hold the Dose and Notify the Healthcare Provider!',
-                answerDetail: 'Digoxin slows the heart rate (negative chronotrope). For adults, hold Digoxin if the apical pulse is below 60 bpm (below 90–110 bpm in infants/children) and assess for toxicity.',
-                takeaway: 'Memory Hook: "Check the apical for a full 60 seconds—under 60, hold it!"'
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeServiceModal();
+                closeInquiryModal();
             }
-        ];
-
-        let currentGemIndex = 0;
-        let isCardFlipped = false;
-
-        function renderGem() {
-            const gem = nursingGems[currentGemIndex];
-            document.getElementById('gem-counter').textContent = `Gem ${currentGemIndex + 1} of ${nursingGems.length}`;
-            document.getElementById('gem-category').textContent = gem.category;
-            document.getElementById('gem-question').textContent = gem.question;
-            document.getElementById('gem-answer-title').textContent = gem.answerTitle;
-            document.getElementById('gem-answer-detail').textContent = gem.answerDetail;
-            document.getElementById('gem-takeaway').textContent = gem.takeaway;
-
-            if (isCardFlipped) {
-                document.getElementById('gem-card-inner').classList.remove('rotate-y-180');
-                isCardFlipped = false;
-            }
-        }
-
-        function flipGemCard() {
-            const inner = document.getElementById('gem-card-inner');
-            isCardFlipped = !isCardFlipped;
-            if (isCardFlipped) {
-                inner.classList.add('rotate-y-180');
-            } else {
-                inner.classList.remove('rotate-y-180');
-            }
-        }
-
-        function nextGem() {
-            currentGemIndex = (currentGemIndex + 1) % nursingGems.length;
-            renderGem();
-        }
-
-        function prevGem() {
-            currentGemIndex = (currentGemIndex - 1 + nursingGems.length) % nursingGems.length;
-            renderGem();
-        }
-
-        // Switch between Flashcard and Mini Quiz
-        function switchGemMode(mode) {
-            const flashcardMode = document.getElementById('mode-flashcard');
-            const quizMode = document.getElementById('mode-quiz');
-            const tabFlashcard = document.getElementById('tab-flashcard');
-            const tabQuiz = document.getElementById('tab-quiz');
-            const counter = document.getElementById('gem-counter');
-
-            if (mode === 'flashcard') {
-                flashcardMode.classList.remove('hidden');
-                quizMode.classList.add('hidden');
-                counter.classList.remove('hidden');
-
-                tabFlashcard.className = 'px-4 py-2 rounded-lg bg-clinicalNavy text-white font-bold text-xs sm:text-sm transition shadow-xs';
-                tabQuiz.className = 'px-4 py-2 rounded-lg text-slate-600 hover:text-clinicalNavy font-bold text-xs sm:text-sm transition';
-            } else {
-                flashcardMode.classList.add('hidden');
-                quizMode.classList.remove('hidden');
-                counter.classList.add('hidden');
-
-                tabQuiz.className = 'px-4 py-2 rounded-lg bg-clinicalNavy text-white font-bold text-xs sm:text-sm transition shadow-xs';
-                tabFlashcard.className = 'px-4 py-2 rounded-lg text-slate-600 hover:text-clinicalNavy font-bold text-xs sm:text-sm transition';
-            }
-        }
-
-        // Mini Quiz Evaluation
-        function checkQuizAnswer(btn, isCorrect) {
-            const allBtns = document.querySelectorAll('.quiz-opt');
-            const feedback = document.getElementById('quiz-feedback');
-
-            allBtns.forEach(b => {
-                b.classList.remove('border-emerald-500', 'bg-emerald-50', 'border-warmCoral', 'bg-red-50');
-                b.querySelector('.opt-icon').innerHTML = '';
-            });
-
-            feedback.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-900', 'border-emerald-200', 'bg-red-50', 'text-red-900', 'border-red-200');
-
-            if (isCorrect) {
-                btn.classList.add('border-emerald-500', 'bg-emerald-50');
-                btn.querySelector('.opt-icon').innerHTML = '<i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>';
-                feedback.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-200');
-                feedback.innerHTML = '<strong>Spot on!</strong> Naloxone (Narcan) is the opioid antagonist used to reverse opioid-induced respiratory depression. <em>(Flumazenil reverses benzodiazepines; Protamine sulfate reverses heparin.)</em>';
-            } else {
-                btn.classList.add('border-warmCoral', 'bg-red-50');
-                btn.querySelector('.opt-icon').innerHTML = '<i class="fa-solid fa-circle-xmark text-warmCoral text-lg"></i>';
-                feedback.classList.add('bg-red-50', 'text-red-900', 'border', 'border-red-200');
-                feedback.innerHTML = '<strong>Not quite—try again!</strong> Look for the specific reversal agent for <em>opioids</em> (morphine) causing respiratory depression.';
-            }
-        }
-
-        // 4. Interactive Booking Service Selector & Submission
-        function selectBookingTab(serviceName) {
-            document.getElementById('selected-service-input').value = serviceName;
-            document.getElementById('submit-btn-label').textContent = `Submit ${serviceName} Inquiry`;
-
-            const tabs = document.querySelectorAll('.booking-tab');
-            tabs.forEach(tab => {
-                if (tab.dataset.service === serviceName) {
-                    tab.className = 'booking-tab active-tab py-3 px-4 rounded-xl border-2 border-electricTeal bg-softMint/60 text-clinicalNavy font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2';
-                } else {
-                    tab.className = 'booking-tab py-3 px-4 rounded-xl border-2 border-slate-200 bg-white hover:border-slate-300 text-slate-600 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2';
-                }
-            });
-
-            // Reset confirmation view if user switches tabs
-            document.getElementById('booking-form').classList.remove('hidden');
-            document.getElementById('booking-confirmation').classList.add('hidden');
-        }
-
-        function submitBookingForm(event) {
-            event.preventDefault();
-            const name = document.getElementById('client-name').value.trim();
-            const service = document.getElementById('selected-service-input').value;
-            const role = document.getElementById('client-role').value;
-
-            document.getElementById('conf-service-badge').textContent = service;
-            document.getElementById('conf-message').textContent = `Thank you, ${name}! We have received your ${service} inquiry (${role}) for KReed Nursing Solutions LLC and will follow up shortly with next steps.`;
-
-            document.getElementById('booking-form').classList.add('hidden');
-            document.getElementById('booking-confirmation').classList.remove('hidden');
-        }
-
-        function resetBookingForm() {
-            document.getElementById('booking-form').reset();
-            selectBookingTab(document.getElementById('selected-service-input').value);
-        }
+        });
 
         // 5. Scroll Reveal Observer
         document.addEventListener('DOMContentLoaded', () => {
